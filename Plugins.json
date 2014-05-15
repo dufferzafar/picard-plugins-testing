@@ -1,0 +1,324 @@
+{
+  "plugins": [
+    {
+      "author": "Luk\u00e1\u009a Lalinsk\u00fd",
+      "compatability": "0.9 - 1.0",
+      "context menu": "No ",
+      "description": "Moves (disc X) from releases titles into separate tags (discnumber and discsubtitle). ",
+      "id": 1,
+      "license": "(unspecified) ",
+      "notes": "-",
+      "title": "Disc Numbers"
+    },
+    {
+      "author": "Luk\u00e1\u009a Lalinsk\u00fd",
+      "compatability": "0.15 - 1.0",
+      "context menu": "No ",
+      "description": "Reverts to pre-NGS (aka \"Classic\") behaviour by adding (disc X: discTitle) to release titles into separate tags (discnumber and discsubtitle). ",
+      "id": 2,
+      "license": "(unspecified) ",
+      "notes": "Broken in 0.15.1 (OK in later releases); workaround version of plugin available on forum here.",
+      "title": "Classic Disc Numbers"
+    },
+    {
+      "author": "Luk\u00e1\u009a Lalinsk\u00fd",
+      "compatability": "0.9 - 1.0",
+      "context menu": "No ",
+      "description": "Removes (feat. Artist) parts from track titles. ",
+      "id": 3,
+      "license": "(unspecified) ",
+      "notes": "-",
+      "title": "Remove Feat. Artists from Titles"
+    },
+    {
+      "author": "Luk\u00e1\u009a Lalinsk\u00fd, Michael Wiencek",
+      "compatability": "0.9 - 1.0",
+      "context menu": "No ",
+      "description": "Move \"feat.\" from artist names to album and track titles. e.g. \"A feat. B - Song\" becomes \"A - Song (feat. B).\" ",
+      "id": 4,
+      "license": "(unspecified) ",
+      "notes": "-",
+      "title": "Move Feat. Artists to Titles"
+    },
+    {
+      "author": "Javier Kohen, Luk\u00e1\u009a Lalinsk\u00fd",
+      "compatability": "0.9 - 1.0",
+      "context menu": "No ",
+      "description": "Converts track and release titles to Title Case (capitalizes first character of every word) ",
+      "id": 5,
+      "license": "GPLv2 ",
+      "notes": "-",
+      "title": "Title Case"
+    },
+    {
+      "author": "Oliver Charles, Philipp Wolfer",
+      "compatability": "0.9 - 0.11,0.12 - 0.14,0.15 - 1.1,Integrated in 1.2 ",
+      "context menu": "No ",
+      "description": "Downloads cover art for optional tag embedding and/or saving as a separate image file (using standard Options >> Cover Art Picard settings) ",
+      "id": 6,
+      "license": "GPLv2 ",
+      "notes": "-",
+      "title": "Cover Art Downloader"
+    },
+    {
+      "author": "Luk\u00e1\u009a Lalinsk\u00fd",
+      "compatability": "0.15 - 1.0 (file 1), 0.15 - 1.0 (file 2)",
+      "context menu": "No ",
+      "description": "Use Last.fm tags as \"genre\" ",
+      "id": 7,
+      "license": "(unspecified) ",
+      "notes": "(copy both files to directory plugins/lastfm/)",
+      "title": "Last.fm Tags"
+    },
+    {
+      "author": "RifRaf, voiceinsideyou ",
+      "compatability": "0.15 - 1.0",
+      "context menu": "No ",
+      "description": "Use Last.fm tags as \"grouping/genre/moods/occasions/countries/originalyear\" and more. Modified version of above plugin. ",
+      "id": 8,
+      "license": "(unspecified) ",
+      "notes": "Unzip into plugins folder. (so you have plugins/lastfmplus/__init__.py etc) Documentation, forum thread",
+      "title": "Last.fm Plus"
+    },
+    {
+      "author": "Luk\u00e1\u009a Lalinsk\u00fd, Philip J\u00e4genstedt",
+      "compatability": "0.9 - 0.16, 1.0",
+      "context menu": "Yes ",
+      "description": "Adds right click option to an unmatched cluster to allow adding releases to MB based on tags. ",
+      "id": 9,
+      "license": "GPLv2 or later ",
+      "notes": "-",
+      "title": "Add Cluster As A Release"
+    },
+    {
+      "author": "Luk\u00e1\u009a Lalinsk\u00fd",
+      "compatability": "0.10 - 1.0",
+      "context menu": "Yes ",
+      "description": "Generates a cuesheet from a release ",
+      "id": 10,
+      "license": "(unspecified) ",
+      "notes": "-",
+      "title": "Generate Cuesheet"
+    },
+    {
+      "author": "Elliot Chance",
+      "compatability": "0.9 - 0.10, 0.15",
+      "context menu": "No ",
+      "description": "Appends information to EPs and Singles such as \" EP\" or \" (single)\" (customisable, see file for details). Useful for separating releases with singles/EPs of the same name. ",
+      "id": 11,
+      "license": "(unspecified) ",
+      "notes": "-",
+      "title": "Release Type"
+    },
+    {
+      "author": "hrglgrmpf",
+      "compatability": "0.15 - 1.0",
+      "context menu": "Yes ",
+      "description": "Do not store specific release information in releases of unknown origin. ",
+      "id": 12,
+      "license": "(unspecified) ",
+      "notes": "See forum post for details.",
+      "title": "No Release"
+    },
+    {
+      "author": "Brian Schweitzer",
+      "compatability": "0.9 - 1.0",
+      "context menu": "Yes ",
+      "description": "Launch searches for clusters or releases to external non-MB websites from Picard ",
+      "id": 13,
+      "license": "(unspecified) ",
+      "notes": "Plugins available for:* All Music Guide* Amazon (supports: .ca, .com, .de, .fr, .jp, and .co.uk)* CastAlbums.org (musicals)* DiscogsFilmMusziek.be (film music)* eBay* Game Music Revolution (game soundtracks)* Google* The Lortel Archives (off-Broadway musicals)* SoundtrackCollector.org (soundtracks)* SoundtrackINFO (soundtracks)",
+      "title": "Search Plugins"
+    },
+    {
+      "author": "Philip J\u00e4genstedt",
+      "compatability": "0.9 - 0.12",
+      "context menu": "Yes ",
+      "description": "Converts the tags of individual files or clusters between different character encodings. This is often necessary with files that have only ID3v1 tags in a non-Latin encoding. ",
+      "id": 14,
+      "license": "GPLv2 or later ",
+      "notes": "You will probably only need to change the target encoding. If the encoding you're looking for isn't in the list, you can type it in yourself and it will hopefully work.",
+      "title": "Change Encoding"
+    },
+    {
+      "author": "Philipp Wolfer",
+      "compatability": "0.12",
+      "context menu": "No ",
+      "description": "Set the original release date of a release by using the release events and \"earliest release\" advanced relationships. ",
+      "id": 15,
+      "license": "GPLv2 or later ",
+      "notes": "Not needed for newer versions of Picard which support the\u00a0%originaldate% tag directly.",
+      "title": "Original Release Date"
+    },
+    {
+      "author": "Creap",
+      "compatability": "0.12 - 1.0",
+      "context menu": "No ",
+      "description": "Guess sortnames for track and album titles and adds as titlesort and albumsort tags. ",
+      "id": 16,
+      "license": "(unspecified) ",
+      "notes": "Checks language (English, Spanish, German, French, Italian, Swedish) and moves articles (\"The\", \"Das\", etc) to the end of the track/album title in the sort tags.",
+      "title": "Title sort names"
+    },
+    {
+      "author": "Creap",
+      "compatability": "0.12 - 1.0",
+      "context menu": "No ",
+      "description": "Moves song metadata such as \"demo\", \"live\" from titlesort to version tag. ",
+      "id": 17,
+      "license": "(unspecified) ",
+      "notes": "Searches titles for keywords like live, demo, mix, etc, and moves it from titles to version tags.",
+      "title": "Title version"
+    },
+    {
+      "author": "Philipp Wolfer",
+      "compatability": "0.9 - 1.0",
+      "context menu": "No ",
+      "description": "Adds the $swapprefix(text, *prefixes) script function, which moves the specified prefixes to the end of the text. ",
+      "id": 18,
+      "license": "GPLv2 or later ",
+      "notes": "See this forum post for details.",
+      "title": "$swapprefix function"
+    },
+    {
+      "author": "WPME Hofland ",
+      "compatability": "0.12",
+      "context menu": "Yes ",
+      "description": "Adds the ability to lookup the PUID on MusicBrainz (useful in case there are several tracks linked with the same PUID) ",
+      "id": 19,
+      "license": "(unspecified) ",
+      "notes": "",
+      "title": "Lookup PUID"
+    },
+    {
+      "author": "Andrew Barnert ",
+      "compatability": "0.12",
+      "context menu": "No ",
+      "description": "Set TSO2 as well as TXXX:ALBUMARTISTSORTORDER in ID3 tags, so album artist sort order works in iTunes and other players ",
+      "id": 20,
+      "license": "(unspecified) ",
+      "notes": "See this forum post for details.",
+      "title": "TSO2"
+    },
+    {
+      "author": "Andrew Barnert ",
+      "compatability": "0.12",
+      "context menu": "Yes ",
+      "description": "Mac OS X only! Add an album/track/etc. to iTunes. ",
+      "id": 21,
+      "license": "(unspecified) ",
+      "notes": "See this forum post for details.",
+      "title": "Add to iTunes"
+    },
+    {
+      "author": "Aaron Lambers ",
+      "compatability": "0.12",
+      "context menu": "Yes ",
+      "description": "Allows sorting of clusters and releases (i.e. both panes) through the right click \"Plugins\" menu. (can sort either Clusters or Releases by Artist or Title, and within a cluster by artist or title) ",
+      "id": 22,
+      "license": "(unspecified) ",
+      "notes": "See this forum post for details.",
+      "title": "The Sorting Plugin"
+    },
+    {
+      "author": "WPME Hofland ",
+      "compatability": "0.12",
+      "context menu": "No ",
+      "description": "Combination of the discnumber and bonus disc plugin ",
+      "id": 23,
+      "license": "(unspecified) ",
+      "notes": "",
+      "title": "Discnumber and Bonus disc"
+    },
+    {
+      "author": "anonymous ",
+      "compatability": "0.9 - 0.12",
+      "context menu": "No ",
+      "description": "Replace hard-to-type-into-search-boxes fancy punctuation with Latin-1 equivalents ",
+      "id": 24,
+      "license": "WTFPL",
+      "notes": "See forum and bug ticket for details.",
+      "title": "Convert Typographic Punctuation"
+    },
+    {
+      "author": "hrglgrmpf",
+      "compatability": "0.10 - 1.0",
+      "context menu": "Yes ",
+      "description": "Analyse your albums using the foobar2000 ReplayGain scanner. ",
+      "id": 25,
+      "license": "(unspecified) ",
+      "notes": "See forum post for details.",
+      "title": "Foobar2000 ReplayGain"
+    },
+    {
+      "author": "Olivier Kaloudoff ",
+      "compatability": "0.10 - 1.0",
+      "context menu": "Yes ",
+      "description": "Analyse your albums using the MetaFlac ReplayGain scanner. ",
+      "id": 26,
+      "license": "(unspecified) ",
+      "notes": "Tested only on Mac OSX / Feedback to kalou at kalou dot net",
+      "title": "MetaFlac ReplayGain"
+    },
+    {
+      "author": "Brian Schweitzer",
+      "compatability": "0.12 - 1.0",
+      "context menu": "No ",
+      "description": "Each plugin adds a new function to taggerscript, to allow comparison of a variable against more than one string. Example: set\u00a0%engineer% to \"test\" if the artist is equal to \"foo\", \"bar\", or \"baz\":  $if($eq2(%artist%,foo,bar,baz),$set(engineer,test))",
+      "id": 27,
+      "license": "(unspecified) ",
+      "notes": "See forum post for details.",
+      "title": "$eq2, $ne2 functions"
+    },
+    {
+      "author": "Brian Schweitzer",
+      "compatability": "0.12 - 1.0",
+      "context menu": "No ",
+      "description": "Adds an $p(string, unofficial) function to taggerscript. This works like the inverse of a \\p{foo} regex using Unicode properties. In other words, it tells you what script a character belongs to. Usage: $p(%something%) $p(%something%, True) The second argument is optional. By default, it is set to False. When set to True, unofficial Unicode scripts (i.e. ConScript, etc.) are also checked. ",
+      "id": 28,
+      "license": "(unspecified) ",
+      "notes": "See forum post for details.",
+      "title": "$p function"
+    },
+    {
+      "author": "Michael Elsd\u00f6rfer ",
+      "compatability": "0.9 - 1.0",
+      "context menu": "Yes ",
+      "description": "Open files/folders in the GUI environment. ",
+      "id": 29,
+      "license": "(unspecified) ",
+      "notes": "",
+      "title": "Open in GUI"
+    },
+    {
+      "author": "ichneumon ",
+      "compatability": "0.15 - 1.0",
+      "context menu": "Yes ",
+      "description": "Remove \"Perfect\" matches from album list i.e. all tracks matched and tags saved. ",
+      "id": 30,
+      "license": "(unspecified) ",
+      "notes": "See forum post for details.",
+      "title": "Remove Perfect albums"
+    },
+    {
+      "author": "encukou ",
+      "compatability": "0.15 - 1.0",
+      "context menu": "Yes ",
+      "description": "Save albums with 4+ tracks and 90%+ confidence on all tracks, then remove them from the album list. Useful when importing a big, relatively well-tagged collection. ",
+      "id": 31,
+      "license": "(unspecified) ",
+      "notes": "See forum post for details.",
+      "title": "Autosave complete albums"
+    },
+    {
+      "author": "Tony Flaks",
+      "compatability": "0.14",
+      "context menu": "Yes ",
+      "description": "Stores and retrieves metadata in \"sidecar\" files so that changes can be staged. ",
+      "id": 32,
+      "license": "(unspecified) ",
+      "notes": "See wiki page for details.",
+      "title": "Sidecars"
+    }
+  ]
+}
