@@ -6,6 +6,13 @@ import json
 import re
 import hashlib
 import subprocess
+import sys
+
+# Pull contents from Github
+# subprocess.call(["git", "pull", "-q"])
+
+plug_dir = "Plugins"
+plugins = []
 
 def getPluginData(filePath):
     """
@@ -34,12 +41,6 @@ def getPluginData(filePath):
 
     return plugData
 
-plug_dir = "Plugins"
-plugins = []
-
-# Pull contents from Github
-# subprocess.call(["git", "pull", "-q"])
-
 # Traverse the plugins dir to create JSON
 for dirName in os.listdir(plug_dir):
 
@@ -51,7 +52,7 @@ for dirName in os.listdir(plug_dir):
 
         if ext not in [".pyc"]:
             files[fileName] = hashlib.md5(open(os.path.join(plug_dir, dirName,
-                                            fileName), "rb").read()).hexdigest()
+                                                fileName), "rb").read()).hexdigest()
 
         if not data:
             data = getPluginData(os.path.join(plug_dir, dirName, fileName))
