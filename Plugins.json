@@ -4,6 +4,7 @@
       "apiver": "[\"1.0.0\"]", 
       "author": "u'Frederik \"Freso\" S. Olesen, Luk\u00e1\u0161 Lalinsk\u00fd, Philip J\u00e4genstedt'", 
       "desc": "\"Adds a plugin context menu option to clusters and single\\", 
+      "downloads": 0, 
       "files": {
         "addrelease.py": "310965f2940c93363e461653aded4350"
       }, 
@@ -15,6 +16,7 @@
       "apiver": "[\"0.15\"]", 
       "author": "'Lukas Lalinsky'", 
       "desc": "'''Moves disc numbers and subtitles from the separate tags to album titles.'''", 
+      "downloads": 0, 
       "files": {
         "classicdiscnumber.py": "7d019be539adb713f138f79827f13ed6"
       }, 
@@ -26,6 +28,7 @@
       "apiver": "[\"0.9.0\", \"0.10\", \"0.15\", \"0.16\"]", 
       "author": "'Lukas Lalinsky, Bryan Toth'", 
       "desc": "'Removes feat. artists from track titles.  Substitution is case insensitive.'", 
+      "downloads": 0, 
       "files": {
         "featartist.py": "7135b99204d99a53435be4709e667f59"
       }, 
@@ -37,6 +40,7 @@
       "apiver": "[\"0.15\"]", 
       "author": "u'Luk\u00e1\u0161 Lalinsk\u00fd'", 
       "desc": "u'Use tags from Last.fm as genre.'", 
+      "downloads": 0, 
       "files": {
         "__init__.py": "b13568d5500f71bc821d2002c1f4ddc0", 
         "options_lastfm.ui": "b30569138eae416a48751e09df037cea", 
@@ -50,6 +54,7 @@
       "apiver": "[\"0.15\"]", 
       "author": "u'RifRaf, Luk\u00e1\u0161 Lalinsk\u00fd, voiceinsideyou'", 
       "desc": "u'''Uses folksonomy tags from Last.fm to<br/>", 
+      "downloads": 0, 
       "files": {
         "__init__.py": "adf8d01c2fdcc28ab212256fe81dcb1f", 
         "ui_options_lastfm.py": "ec8aac7b6ea903ee94d897bf81a06e6f"
@@ -62,6 +67,7 @@
       "apiver": "['0.15']", 
       "author": "u'Johannes Wei\u00dfl'", 
       "desc": "'''Do not store specific release information in releases of unknown origin.'''", 
+      "downloads": 0, 
       "files": {
         "no_release.py": "0cebf9bcacbfc78e9f1d1f621ca94b23"
       }, 
@@ -73,6 +79,7 @@
       "apiver": "[\"0.10\", \"0.15\", \"0.16\"]", 
       "author": "u\"Philipp Wolfer\"", 
       "desc": "\"\"\"Calculate ReplayGain for selected files and albums.\"\"\"", 
+      "downloads": 0, 
       "files": {
         "__init__.py": "560cca1464a693a32cfe7c81bd178e4c", 
         "options_replaygain.ui": "4a231bb612395715cc72391df182153f", 
@@ -86,6 +93,7 @@
       "apiver": "['1.0']", 
       "author": "u'Sophist'", 
       "desc": "u'''Display a dialog box listing the metadata variables for the track / file.'''", 
+      "downloads": 0, 
       "files": {
         "__init__.py": "e01231dab0ca3f0d7fd195a0d5fe36d9", 
         "ui_variables_dialog.py": "0776bad3601365200d4dfed990b87463", 

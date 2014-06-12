@@ -1,20 +1,13 @@
-#!python3
-
 # Imports
 import os
 import json
 import re
 import hashlib
 import subprocess
-import sys
+import os
 
-# Pull contents from Github
-# subprocess.call(["git", "pull", "-q"])
 
-plug_dir = "Plugins"
-plugins = []
-
-def getPluginData(filePath):
+def get_data(filePath):
     """
     Extract usable information from plugin files.
     """
@@ -41,29 +34,58 @@ def getPluginData(filePath):
 
     return plugData
 
-# Traverse the plugins dir to create JSON
-for dirName in os.listdir(plug_dir):
 
-    files = {}
-    data = {}
+def build_json():
+    """
+    Traverse the plugins directory to generate json data.
+    """
 
-    for fileName in os.listdir(os.path.join(plug_dir, dirName)):
-        ext = os.path.splitext(fileName)[1]
+    for dirName in os.listdir(plugDir):
 
-        if ext not in [".pyc"]:
-            files[fileName] = hashlib.md5(open(os.path.join(plug_dir, dirName,
-                                                fileName), "rb").read()).hexdigest()
+        files = {}
+        data = {}
 
-        if not data:
-            data = getPluginData(os.path.join(plug_dir, dirName, fileName))
+        for fileName in os.listdir(os.path.join(plugDir, dirName)):
+            ext = os.path.splitext(fileName)[1]
 
-    if data:
-        data['id'] = dirName
-        data['files'] = files
-        plugins.append(data)
+            if ext not in [".pyc"]:
+                files[fileName] = hashlib.md5(open(os.path.join(plugDir, dirName,
+                                                                fileName), "rb").read()).hexdigest()
 
-    else:
-        plugins.append({"id": dirName, "files": files})
+            if not data:
+                data = get_data(os.path.join(plugDir, dirName, fileName))
 
-# print(json.dumps({ "plugins": plugins }, sort_keys=True, indent=2))
-json.dump({"plugins": plugins}, open("Plugins.json", "w"), sort_keys=True, indent=2)
+        found = False
+        for p in plugins:
+            if p["id"] == dirName:
+                found = True
+                break
+
+        if found:
+            print("Updating " + dirName)
+            if data:
+                for key, value in data.items():
+                    p[key] = value
+            p["files"] = files
+        else:
+            print("Adding " + dirName)
+            data['id'] = dirName
+            data['files'] = files
+            data['downloads'] = 0
+            plugins.append(data)
+
+# Pull contents from Github
+# subprocess.call(["git", "pull", "-q"])
+
+plugDir = "Plugins"
+outFile = "Plugins.json"
+
+if os.path.isfile(outFile):
+    plugins = json.load(open(outFile, "r"))["plugins"]
+else:
+    plugins = []
+
+build_json()
+
+# print(json.dumps({"plugins": plugins}, sort_keys=True, indent=2))
+json.dump({"plugins": plugins}, open(outFile, "w"), sort_keys=True, indent=2)
