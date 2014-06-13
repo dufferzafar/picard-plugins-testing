@@ -1,10 +1,10 @@
-# Imports
+#!python3
+
 import os
-import json
 import re
-import hashlib
-import subprocess
-import os
+import json
+from subprocess import call
+from hashlib import md5
 
 
 def get_data(filePath):
@@ -40,20 +40,21 @@ def build_json():
     Traverse the plugins directory to generate json data.
     """
 
-    for dirName in os.listdir(plugDir):
+    for dirName in os.listdir(plug_dir):
 
         files = {}
         data = {}
 
-        for fileName in os.listdir(os.path.join(plugDir, dirName)):
+        for fileName in os.listdir(os.path.join(plug_dir, dirName)):
             ext = os.path.splitext(fileName)[1]
 
             if ext not in [".pyc"]:
-                files[fileName] = hashlib.md5(open(os.path.join(plugDir, dirName,
-                                                                fileName), "rb").read()).hexdigest()
+                filePath = os.path.join(plug_dir, dirName, fileName)
+                md5Hash = md5(open(filePath, "rb").read()).hexdigest()
+                files[fileName] = md5Hash
 
             if not data:
-                data = get_data(os.path.join(plugDir, dirName, fileName))
+                data = get_data(os.path.join(plug_dir, dirName, fileName))
 
         found = False
         for p in plugins:
@@ -74,18 +75,21 @@ def build_json():
             data['downloads'] = 0
             plugins.append(data)
 
+# The file that contains json data
+plug_file = "Plugins.json"
+
+# The directory which contains plugin files
+plug_dir = "Plugins"
+
 # Pull contents from Github
-# subprocess.call(["git", "pull", "-q"])
+# call(["git", "pull", "-q"])
 
-plugDir = "Plugins"
-outFile = "Plugins.json"
-
-if os.path.isfile(outFile):
-    plugins = json.load(open(outFile, "r"))["plugins"]
+if os.path.isfile(plug_file):
+    plugins = json.load(open(plug_file, "r"))["plugins"]
 else:
     plugins = []
 
 build_json()
 
 # print(json.dumps({"plugins": plugins}, sort_keys=True, indent=2))
-json.dump({"plugins": plugins}, open(outFile, "w"), sort_keys=True, indent=2)
+json.dump({"plugins": plugins}, open(plug_file, "w"), sort_keys=True, indent=2)

@@ -14,11 +14,14 @@ from flask import (
 app = Flask(__name__)
 
 
-def find_plugin(id):
-    plug = list(filter(lambda t: t['id'] == str(id), plugins['plugins']))
+def find_plugin(pid):
+    """
+    Finds a plugin with the specified id.
+    """
+    plugin = list(filter(lambda t: t['id'] == str(pid), plugins['plugins']))
 
-    if plug:
-        return plug[0]
+    if plugin:
+        return plugin[0]
     else:
         return None
 
@@ -40,13 +43,13 @@ def get_plugin():
     pid = request.args.get('id', None)
     if pid:
         if find_plugin(pid):
-            plug = {'plugin': find_plugin(pid)}
+            plugin = {'plugin': find_plugin(pid)}
         else:
             return not_found(404)
     else:
-        plug = plugins
+        plugin = plugins
 
-    return jsonify(plug)
+    return jsonify(plugin)
 
 
 @app.route('/download', methods=['GET'])
