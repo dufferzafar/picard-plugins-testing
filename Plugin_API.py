@@ -3,12 +3,15 @@
 import os
 import zipfile
 import tempfile
-from flask import Flask, request, json, jsonify, abort, make_response
-app = Flask(__name__)
+from flask import (
+    Flask,
+    json,
+    jsonify,
+    make_response,
+    request,
+)
 
-# Load JSON Data
-plugins = json.load(open("Plugins.json"))
-plug_dir = "Plugins"
+app = Flask(__name__)
 
 
 def find_plugin(id):
@@ -19,12 +22,13 @@ def find_plugin(id):
     else:
         return None
 
-# Todo
+
 def increase_count(plugin):
     """
-    Increments the download count and updates the json file
+    Increments the download count and updates the json file.
     """
-    pass
+    plugin["downloads"] += 1
+    json.dump(plugins, open(plug_file, "w"), sort_keys=True, indent=2)
 
 
 @app.route('/plugins', methods=['GET'])
@@ -48,7 +52,9 @@ def get_plugin():
 @app.route('/download', methods=['GET'])
 def download_plugin():
     """
-    Increments count and serves files as an attachment
+    Serves files as a download attachment.
+
+    Single files are served as is, multiple ones are zipped.
     """
 
     pid = request.args.get('id', None)
@@ -61,27 +67,44 @@ def download_plugin():
                 filePath = os.path.join(plug_dir, pid, fileName)
 
                 response = make_response(open(filePath).read())
-                response.headers["Content-Disposition"] = "attachment; filename=" + fileName
+                response.headers["Content-Type"] = "application/python-py"
+                response.headers["Content-Disposition"] = \
+                    "attachment; filename=" + fileName
             else:
                 with tempfile.SpooledTemporaryFile() as tmp:
                     with zipfile.ZipFile(tmp, "w") as archive:
                         for fileName in list(files.keys()):
-                            archive.write(os.path.join(plug_dir, pid, fileName), fileName)
+                            filePath = os.path.join(plug_dir, pid, fileName)
+                            archive.write(filePath, fileName)
 
                     tmp.seek(0)
                     response = make_response(tmp.read())
-                    response.headers["Content-Disposition"] = "attachment; filename=" + pid + ".zip"
+                    response.headers["Content-Type"] = "application/zip"
+                    response.headers["Content-Disposition"] = \
+                        "attachment; filename=" + pid + ".zip"
 
+            increase_count(find_plugin(pid))
             return response
         else:
             return not_found(404)
     else:
-        return jsonify({'error': 'id not specified'})
+        return make_response(jsonify({'error': 'Plugin id not specified.'}),
+                             400)
 
 
 @app.errorhandler(404)
 def not_found(error):
-    return make_response(jsonify({'error': 'Plugin not found'}), 404)
+    return make_response(jsonify({'error': 'Plugin not found.'}),
+                         404)
+
+# The file that contains json data
+plug_file = "Plugins.json"
+
+# The directory which contains plugin files
+plug_dir = "Plugins"
+
+# Load JSON Data
+plugins = json.load(open(plug_file))
 
 if __name__ == '__main__':
     app.run(debug=True)
