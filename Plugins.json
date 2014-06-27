@@ -1,45 +1,45 @@
 {
   "plugins": [
     {
-      "apiver": "[\"1.0.0\"]", 
-      "author": "u'Frederik \"Freso\" S. Olesen, Luk\u00e1\u0161 Lalinsk\u00fd, Philip J\u00e4genstedt'", 
-      "desc": "\"Adds a plugin context menu option to clusters and single\\", 
+      "apiver": "1.0.0", 
+      "author": "Frederik \"Freso\" S. Olesen, Luk\u00e1\u0161 Lalinsk\u00fd, Philip J\u00e4genstedt", 
+      "desc": "Adds a plugin context menu option to clusters and single files to help you quickly add them as releases or standalone recordings to the MusicBrainz database via the website by pre-populating artists, track names and times.", 
       "downloads": 0, 
       "files": {
         "addrelease.py": "310965f2940c93363e461653aded4350"
       }, 
       "id": "addrelease", 
-      "title": "u\"Add Cluster As Release\"", 
-      "ver": "\"0.5\""
+      "name": "Add Cluster As Release", 
+      "ver": "0.5"
     }, 
     {
-      "apiver": "[\"0.15\"]", 
-      "author": "'Lukas Lalinsky'", 
-      "desc": "'''Moves disc numbers and subtitles from the separate tags to album titles.'''", 
+      "apiver": "0.15", 
+      "author": "Lukas Lalinsky", 
+      "desc": "Moves disc numbers and subtitles from the separate tags to album titles.", 
       "downloads": 0, 
       "files": {
         "classicdiscnumber.py": "7d019be539adb713f138f79827f13ed6"
       }, 
       "id": "classicdiscnumber", 
-      "title": "'Classic Disc Numbers'", 
-      "ver": "\"0.1\""
+      "name": "Classic Disc Numbers", 
+      "ver": "0.1"
     }, 
     {
-      "apiver": "[\"0.9.0\", \"0.10\", \"0.15\", \"0.16\"]", 
-      "author": "'Lukas Lalinsky, Bryan Toth'", 
-      "desc": "'Removes feat. artists from track titles.  Substitution is case insensitive.'", 
+      "apiver": "0.9.0\", \"0.10\", \"0.15\", \"0.16", 
+      "author": "Lukas Lalinsky, Bryan Toth", 
+      "desc": "Removes feat. artists from track titles.  Substitution is case insensitive.", 
       "downloads": 0, 
       "files": {
         "featartist.py": "7135b99204d99a53435be4709e667f59"
       }, 
       "id": "featartist", 
-      "title": "'Feat. Artists Removed'", 
-      "ver": "\"0.2\""
+      "name": "Feat. Artists Removed", 
+      "ver": "0.2"
     }, 
     {
-      "apiver": "[\"0.15\"]", 
-      "author": "u'Luk\u00e1\u0161 Lalinsk\u00fd'", 
-      "desc": "u'Use tags from Last.fm as genre.'", 
+      "apiver": "0.15", 
+      "author": "Luk\u00e1\u0161 Lalinsk\u00fd", 
+      "desc": "Use tags from Last.fm as genre.", 
       "downloads": 0, 
       "files": {
         "__init__.py": "b13568d5500f71bc821d2002c1f4ddc0", 
@@ -47,38 +47,38 @@
         "ui_options_lastfm.py": "8fd62cf1a36f4c64198c23938e427dfa"
       }, 
       "id": "lastfm", 
-      "title": "u'Last.fm'", 
-      "ver": "\"0.4\""
+      "name": "Last.fm", 
+      "ver": "0.4"
     }, 
     {
-      "apiver": "[\"0.15\"]", 
-      "author": "u'RifRaf, Luk\u00e1\u0161 Lalinsk\u00fd, voiceinsideyou'", 
-      "desc": "u'''Uses folksonomy tags from Last.fm to<br/>", 
+      "apiver": "0.15", 
+      "author": "RifRaf, Luk\u00e1\u0161 Lalinsk\u00fd, voiceinsideyou", 
+      "desc": "Uses folksonomy tags from Last.fm to<br/>* Sort music into major and minor genres based on configurable genre \"whitelists\"<br/>* Add \"mood\", \"occasion\" and other custom categories<br/>* Add \"original release year\" and \"decade\" tags, as well as populate blank dates.", 
       "downloads": 0, 
       "files": {
         "__init__.py": "adf8d01c2fdcc28ab212256fe81dcb1f", 
         "ui_options_lastfm.py": "ec8aac7b6ea903ee94d897bf81a06e6f"
       }, 
       "id": "lastfmplus", 
-      "title": "u'Last.fm.Plus'", 
-      "ver": "\"0.14\""
+      "name": "Last.fm.Plus", 
+      "ver": "0.14"
     }, 
     {
-      "apiver": "['0.15']", 
-      "author": "u'Johannes Wei\u00dfl'", 
-      "desc": "'''Do not store specific release information in releases of unknown origin.'''", 
+      "apiver": "0.15", 
+      "author": "Johannes Wei\u00dfl", 
+      "desc": "Do not store specific release information in releases of unknown origin.", 
       "downloads": 0, 
       "files": {
         "no_release.py": "0cebf9bcacbfc78e9f1d1f621ca94b23"
       }, 
       "id": "no_release", 
-      "title": "u'No release'", 
-      "ver": "'0.1'"
+      "name": "No release", 
+      "ver": "0.1"
     }, 
     {
-      "apiver": "[\"0.10\", \"0.15\", \"0.16\"]", 
-      "author": "u\"Philipp Wolfer\"", 
-      "desc": "\"\"\"Calculate ReplayGain for selected files and albums.\"\"\"", 
+      "apiver": "0.10\", \"0.15\", \"0.16", 
+      "author": "Philipp Wolfer", 
+      "desc": "Calculate ReplayGain for selected files and albums.", 
       "downloads": 0, 
       "files": {
         "__init__.py": "560cca1464a693a32cfe7c81bd178e4c", 
@@ -86,13 +86,13 @@
         "ui_options_replaygain.py": "c220c2b8abc94e2f2c07349201654b67"
       }, 
       "id": "replaygain", 
-      "title": "u\"ReplayGain\"", 
-      "ver": "\"0.1\""
+      "name": "ReplayGain", 
+      "ver": "0.1"
     }, 
     {
-      "apiver": "['1.0']", 
-      "author": "u'Sophist'", 
-      "desc": "u'''Display a dialog box listing the metadata variables for the track / file.'''", 
+      "apiver": "1.0", 
+      "author": "Sophist", 
+      "desc": "Display a dialog box listing the metadata variables for the track / file.", 
       "downloads": 0, 
       "files": {
         "__init__.py": "e01231dab0ca3f0d7fd195a0d5fe36d9", 
@@ -100,8 +100,8 @@
         "variables_dialog.ui": "bea2128f650b290fa6ee5740ac5db808"
       }, 
       "id": "viewvariables", 
-      "title": "u'View script variables'", 
-      "ver": "'0.5'"
+      "name": "View script variables", 
+      "ver": "0.5"
     }
   ]
 }
