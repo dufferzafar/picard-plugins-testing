@@ -1,29 +1,9 @@
 # Testing ground for Picard's Plugin Delivery System
 
-Apart from a folder that contains sample plugins, the repo contains two main scripts.
+The repo contains a script `generate.py` that can create a json file from a folder of plugins. It reads the plugin files to extract information such as Author and Title from them, and creates a json with all that data. The json also contains the MD5 hashes of all the files used.
 
-## GenJSON:
+Apart from generating the json data, the script can also compress the plugin folders to zip files so they can be served easily.
 
-This script can create a json file from a folder of plugins. It reads the plugin files to extract information such as Author and Title from them, and creates a json with all that data. The json also contains the MD5 hashes of all the files used.
+Note: 
 
-## PluginAPI:
-
-The json generated above is loaded and served as via Flask.
-
-It supports the following endpoints:
-
-```
-/plugins 
-
-  Lists all the plugins
-
-/plugins?id=<plugid>
-
-  List a specific plugin whose id matches with <plugid>
-
-/download?id=<plugid>
-
-  Increments the download count and initiates download of a plugin.
-  If a plugin contains a single file, it is served as is, whereas if there are
-  multiple files, they are compressed in a zip and are then served.
-```
+The Plugin API that used to be a part of the repo has now been [moved and merged](https://github.com/musicbrainz/picard-website/blob/master/views/api.py) into the main Picard website itself.
