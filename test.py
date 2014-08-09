@@ -24,10 +24,11 @@ class GenerateTestCase(unittest.TestCase):
         build_json()
 
         # Load the json file
-        plugin_json = json.load(open(plugin_file, "r"))["plugins"]
+        with open(plugin_file, "r") as in_file:
+            plugin_json = json.load(in_file)["plugins"]
 
         # All top level directories in plugin_dir
-        plugin_folders = os.walk(plugin_dir).next()[1]
+        plugin_folders = next(os.walk(plugin_dir))[1]
 
         # Number of entries in the json should be equal to the
         # number of folders in plugin_dir
@@ -47,7 +48,7 @@ class GenerateTestCase(unittest.TestCase):
         plugin_zips = glob.glob(os.path.join(plugin_dir,"*.zip"))
 
         # All top level directories in plugin_dir
-        plugin_folders = os.walk(plugin_dir).next()[1]
+        plugin_folders = next(os.walk(plugin_dir))[1]
 
         # Number of folders should be equal to number of zips
         self.assertEqual(len(plugin_zips), len(plugin_folders))
@@ -63,15 +64,22 @@ class GenerateTestCase(unittest.TestCase):
         build_json()
 
         # Load the json file
-        plugin_json = json.load(open(plugin_file, "r"))["plugins"]
+        with open(plugin_file, "r") as in_file:
+            plugin_json = json.load(in_file)["plugins"]
+
+        # Python 3 FTW!
+        if sys.version_info >= (3,0,0):
+            unicode_or_str = str
+        else:
+            unicode_or_str = unicode
 
         # All plugins should contain all required fields
         for module_name, data in plugin_json.items():
-            assert(isinstance(data['name'], unicode))
-            assert(isinstance(data['api_version'], unicode))
-            assert(isinstance(data['author'], unicode))
+            assert(isinstance(data['name'], unicode_or_str))
+            assert(isinstance(data['api_version'], unicode_or_str))
+            assert(isinstance(data['author'], unicode_or_str))
             assert(isinstance(data['downloads'], int))
-            assert(isinstance(data['description'], unicode))
+            assert(isinstance(data['description'], unicode_or_str))
 
 if __name__ == '__main__':
     unittest.main()

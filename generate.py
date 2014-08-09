@@ -74,12 +74,13 @@ def build_json():
 
     # Read the existing data
     if os.path.isfile(plugin_file):
-        plugins = json.load(open(plugin_file, "r"))["plugins"]
+        with open(plugin_file, "r") as in_file:
+            plugins = json.load(in_file)["plugins"]
     else:
         plugins = {}
 
     # All top level directories in plugin_dir are plugins
-    for dirname in os.walk(plugin_dir).next()[1]:
+    for dirname in next(os.walk(plugin_dir))[1]:
 
         files = {}
         data = {}
@@ -94,7 +95,8 @@ def build_json():
 
                 if ext not in [".pyc"]:
                     file_path = os.path.join(root, filename)
-                    md5Hash = md5(open(file_path, "rb").read()).hexdigest()
+                    with open(file_path, "rb") as md5file:
+                        md5Hash = md5(md5file.read()).hexdigest()
                     files[file_path.split(os.path.join(dirpath, ''))[1]] = md5Hash
 
                 if not data:
@@ -112,8 +114,8 @@ def build_json():
             data['downloads'] = 0
             plugins[dirname] = data
 
-    json.dump({"plugins": plugins}, open(plugin_file, "w"),
-              sort_keys=True, indent=2)
+    with open(plugin_file, "w") as out_file:
+        json.dump({"plugins": plugins}, out_file, sort_keys=True, indent=2)
 
 
 def zip_files():
@@ -121,7 +123,7 @@ def zip_files():
     Zip up plugin folders
     """
 
-    for dirname in os.walk(plugin_dir).next()[1]:
+    for dirname in next(os.walk(plugin_dir))[1]:
         archive_path = os.path.join(plugin_dir, dirname)
         archive = zipfile.ZipFile(archive_path + ".zip", "w")
 
